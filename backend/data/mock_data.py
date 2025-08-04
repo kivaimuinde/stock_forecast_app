@@ -16,5 +16,4 @@ def generate_mock_stock_data(days=90):
     np.random.seed(42)  # reproducibility
     prices = np.cumsum(np.random.randn(days) * 2 + 0.5) + 100  # random walk
     df = pd.DataFrame({'Date': dates, 'Close': prices})
-    df['ds'] = df['ds'].dt.tz_localize(None)
     return df
